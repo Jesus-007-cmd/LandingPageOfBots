@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@keyframes color-cycle {
+  0%   { color: #4f46e5; }  /* indigo-600 */
+  33%  { color: #ec4899; }  /* pink-500 */
+  66%  { color: #10b981; }  /* emerald-500 */
+  100% { color: #4f46e5; }  /* vuelve a indigo-600 */
+}
+
+.text-animate-color {
+  animation: color-cycle 6s ease-in-out infinite;
+}
