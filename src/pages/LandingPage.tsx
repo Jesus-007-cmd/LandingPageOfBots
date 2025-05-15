@@ -8,7 +8,7 @@ import BotList from "../components/BotList";
 import Pricing from "../components/Pricing";
 import FAQ from "../components/FAQ";
 import Testimonials from "../components/Testimonials";
-import ContactForm from "../components/ContactForm";
+
 import Footer from "../components/Footer";
 
 const LandingPage: React.FC = () => (
