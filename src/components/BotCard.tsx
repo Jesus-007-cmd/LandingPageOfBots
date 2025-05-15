@@ -1,3 +1,4 @@
+// src/components/BotCard.tsx
 import React from "react";
 import type { BotGPT } from "../data/bots";
 
@@ -8,15 +9,61 @@ interface Props {
 }
 
 const BotCard: React.FC<Props> = ({ nombre, descripcion, imagen }) => (
-  <div className="group bg-white/5 hover:bg-white/10 rounded-2xl shadow-md transition-all duration-300 p-5 flex items-center gap-5 text-left border border-white/10 hover:scale-105 cursor-pointer hover:shadow-[0_0_20px_rgba(0,195,255,0.3)]">
-    <img
-      src={`/assets/${imagen}`}
-      alt={nombre}
-      className="w-20 h-28 object-cover rounded-[50%/60%] border-2 border-white/20 group-hover:border-cyan-400 group-hover:shadow-[0_0_15px_rgba(0,195,255,0.5)] transition duration-300"
-    />
-    <div className="flex-1">
-      <h3 className="text-base font-bold text-white leading-tight">{nombre}</h3>
-      <p className="text-sm text-gray-300 mt-1 leading-snug">{descripcion}</p>
+  <div
+    className="
+      relative group
+      bg-gray-800 hover:bg-gray-700
+      rounded-2xl shadow-md
+      overflow-hidden
+      transition-all duration-300
+      p-6 flex flex-col items-center 
+      text-center border border-transparent
+      hover:border-blue-400
+      max-w-sm
+      h-full
+    "
+  >
+    {/* Aura + Imagen */}
+    <div className="relative w-40 h-40 mb-4">
+      <div className="
+        absolute inset-0 rounded-full bg-blue-400/30
+        filter blur-xl opacity-0
+        group-hover:opacity-100 transition-opacity duration-500 animate-pulse
+      "/>
+      <div className="
+        absolute inset-0 rounded-full bg-blue-400/50
+        filter blur-2xl opacity-0
+        group-hover:opacity-80 transition-opacity duration-700 animate-ping
+      "/>
+      <img
+        src={`/assets/robots/${imagen}`}
+        alt={nombre}
+        className="
+          relative z-10 w-full h-full object-contain
+          transition-transform duration-300 group-hover:scale-125
+        "
+      />
+    </div>
+
+    {/* Texto */}
+    <h3 className="text-xl font-bold text-white mb-2">{nombre}</h3>
+    <p className="text-sm text-gray-400 line-clamp-4">{descripcion}</p>
+
+    {/* Espacio para el botón */}
+    <div className="mt-auto w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <a
+        href="#pricing"
+        className="
+          block
+          bg-red-600 hover:bg-red-700
+          text-white font-medium
+          py-2 mt-4
+          rounded-full
+          transition
+        "
+      >
+        Comprar
+      </a>
     </div>
   </div>
 );

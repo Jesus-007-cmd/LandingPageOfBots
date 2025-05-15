@@ -7,21 +7,33 @@ const ContactForm: React.FC = () => {
     mensaje: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert("Gracias por tu mensaje. Te contactaremos pronto.");
-    // Aquí puedes integrar una API real como Formspree, EmailJS, etc.
     setFormData({ nombre: "", correo: "", mensaje: "" });
   };
 
   return (
-    <section id="contacto" className="w-full max-w-xl mt-20 mb-10 p-6 bg-white shadow-md rounded-xl">
-      <h2 className="text-2xl font-bold mb-4 text-blue-700 text-center">Contáctanos</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <section
+      id="contacto"
+      className="
+        relative
+        w-full max-w-lg mx-auto
+        mt-12 mb-20
+        p-8 bg-white
+        rounded-2xl shadow-xl
+      "
+    >
+      <h2 className="text-2xl font-bold text-blue-700 mb-6 text-center">
+        Contáctanos
+      </h2>
+      <form onSubmit={handleSubmit} className="space-y-5">
         <input
           type="text"
           name="nombre"
@@ -29,7 +41,12 @@ const ContactForm: React.FC = () => {
           value={formData.nombre}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-md"
+          className="
+            w-full px-4 py-3
+            border border-gray-300 rounded-lg
+            focus:outline-none focus:ring-2 focus:ring-blue-700
+            transition
+          "
         />
         <input
           type="email"
@@ -38,20 +55,35 @@ const ContactForm: React.FC = () => {
           value={formData.correo}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-md"
+          className="
+            w-full px-4 py-3
+            border border-gray-300 rounded-lg
+            focus:outline-none focus:ring-2 focus:ring-blue-700
+            transition
+          "
         />
         <textarea
           name="mensaje"
           placeholder="Escribe tu mensaje"
-          rows={4}
+          rows={5}
           value={formData.mensaje}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-md"
+          className="
+            w-full px-4 py-3
+            border border-gray-300 rounded-lg
+            focus:outline-none focus:ring-2 focus:ring-blue-700
+            transition
+          "
         />
         <button
           type="submit"
-          className="bg-blue-700 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-800 transition"
+          className="
+            w-full bg-blue-700 text-white
+            py-3 rounded-full font-medium
+            hover:bg-blue-800
+            transition
+          "
         >
           Enviar mensaje
         </button>

@@ -1,40 +1,33 @@
 import React from "react";
-import Header from "../components/Header";
+import Hero from "../components/Hero";
+import Benefits from "../components/Benefits";
+import EarlyTestimonial from "../components/EarlyTestimonial";
+import Stats from "../components/Stats";
+import HowItWorks from "../components/HowItWorks";
 import BotList from "../components/BotList";
-
-import CallToAction from "../components/CallToAction";
-import Footer from "../components/Footer";
+import Pricing from "../components/Pricing";
+import FAQ from "../components/FAQ";
+import Testimonials from "../components/Testimonials";
 import ContactForm from "../components/ContactForm";
+import Footer from "../components/Footer";
 
-
-const LandingPage: React.FC = () => {
-  return (
-    <main className="relative w-full min-h-screen bg-gray-900 text-white overflow-hidden">
-      {/* Patrón visual suave */}
-      <div className="absolute inset-0 bg-[url('/pattern-waves.svg')] bg-repeat bg-[length:600px] opacity-10 pointer-events-none" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 space-y-16">
-        <Header />
-
-        <section className="w-full text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-animate-color">
-            Bots Inteligentes para Impulsar tu Negocio
-          </h2>
-
-          <p className="text-gray-300 mb-10 max-w-2xl mx-auto">
-            Elige entre una variedad de asistentes con inteligencia artificial para mejorar tus ventas, productividad y servicio.
-          </p>
-
-          {/* Aquí renderizamos toda la lista con buscador integrado */}
-          <BotList />
-        </section>
-
-        <CallToAction />
-        <ContactForm />
-        <Footer />
-      </div>
-    </main>
-  );
-};
+const LandingPage: React.FC = () => (
+  <main className="bg-gray-900 text-white">
+    <Hero />
+    <Benefits />
+    <EarlyTestimonial />
+    <Stats />
+    <HowItWorks />
+    <section id="bots" className="py-16 px-6">
+      <h2 className="text-3xl font-bold text-center mb-6">Nuestros Bots</h2>
+      <BotList />
+    </section>
+    <Pricing />
+    <FAQ />
+    <Testimonials />
+    {/*<ContactForm />*/}
+    <Footer />
+  </main>
+);
 
 export default LandingPage;
