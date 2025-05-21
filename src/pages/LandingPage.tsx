@@ -11,13 +11,13 @@ import Footer from "../components/Footer";
 
 import { bots } from "../data/bots2";
 import CategorySelector from "../components/CategorySelector";
-import BotCarousel from "../components/BotCarousel";
+
 
 const categoriasUnicas = [...new Set(bots.map(bot => bot.categoria))];
 
 const LandingPage: React.FC = () => {
   const [categoriaActiva, setCategoriaActiva] = useState(categoriasUnicas[0]);
-  const botsFiltrados = bots.filter(bot => bot.categoria === categoriaActiva);
+  
 
   return (
     <main className="bg-gray-900 text-white">
