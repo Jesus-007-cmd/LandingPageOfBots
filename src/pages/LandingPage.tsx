@@ -13,7 +13,7 @@ import { bots } from "../data/bots2";
 import CategorySelector from "../components/CategorySelector";
 import VirtualRevolution from "../components/VirtualRevolution";
 import GPTBusinessComponent from "../components/GPTBusinessComponent";
-
+import SuiteBotsSection from "../components/SuiteBotsSection"
 // En tu página…
 <GPTBusinessComponent imageSrc="/assets/emprendedorapensandoenredessociales.jpg" />
 
@@ -31,6 +31,7 @@ const LandingPage: React.FC = () => {
       <BusinessCTA imageSrc="/assets/images/emprendedorapensandoenredessociales.jpg" />
 
       <EarlyTestimonial />
+      <SuiteBotsSection imageSrc="/assets/images/suitedebotsmonetizadoresderedessociales2.jpg" />
       <VirtualRevolution imageSrc="../../public/assets/images/redessocialesrelojgraficagirl.jpg" />
 
       <Stats />
