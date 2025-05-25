@@ -18,7 +18,7 @@ const CallToAction: React.FC = () => {
         Elige el bot que más se adapte a tus necesidades o contáctanos para recibir asesoría personalizada.
       </p>
       <a
-        href="#contacto"
+        href="#pricing"
         className="
           inline-block
           bg-white text-blue-700 font-semibold

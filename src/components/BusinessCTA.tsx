@@ -1,5 +1,8 @@
+
 // src/components/BusinessCTA.tsx
 import React from "react";
+import { motion } from 'framer-motion'
+import { Rocket } from 'lucide-react'
 import {
   FaMobileAlt,
   FaBullhorn,
@@ -78,24 +81,16 @@ const BusinessCTA: React.FC<BusinessCTAProps> = ({ imageSrc }) => {
         </div>
         
       </div>
-      <button
-  className="
-    mt-10 mx-auto block
-    h-12                     /* altura fija */
-    flex items-center justify-center   /* centra en X y Y */
-    gap-2
-    bg-gradient-to-r from-blue-600 to-indigo-600
-    hover:from-blue-700 hover:to-indigo-700
-    text-white font-semibold
-    py-0 px-6              /* quitamos el padding vertical */
-    rounded-full
-    transition-shadow shadow-lg hover:shadow-xl
-    leading-none           /* line-height al mínimo */
-  "
->
-  <FaRocket size={20} className="self-center" />
-  <span className="leading-none">¡Quiero impulsar mi negocio!</span>
-</button>
+      <motion.a
+      href="#pricing"
+      className="inline-flex items-center gap-2 bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full shadow-lg uppercase tracking-wide"
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ type: 'spring', stiffness: 300 }}
+    >
+      <Rocket className="w-5 h-5" />¡Quiero impulsar mi negocio!
+      </motion.a>
+
 
     </section>
   );

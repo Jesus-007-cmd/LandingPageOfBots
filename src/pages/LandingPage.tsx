@@ -14,6 +14,7 @@ import CategorySelector from "../components/CategorySelector";
 import VirtualRevolution from "../components/VirtualRevolution";
 import GPTBusinessComponent from "../components/GPTBusinessComponent";
 import SuiteBotsSection from "../components/SuiteBotsSection"
+import ChatbotSuitePromo from "../components/ChatbotSuitePromo"
 // En tu página…
 <GPTBusinessComponent imageSrc="/assets/emprendedorapensandoenredessociales.jpg" />
 
@@ -31,11 +32,11 @@ const LandingPage: React.FC = () => {
       <BusinessCTA imageSrc="/assets/images/emprendedorapensandoenredessociales.jpg" />
 
       <EarlyTestimonial />
-      <SuiteBotsSection imageSrc="/assets/images/suitedebotsmonetizadoresderedessociales2.jpg" />
+      <SuiteBotsSection />
       <VirtualRevolution imageSrc="../../public/assets/images/redessocialesrelojgraficagirl.jpg" />
-
-      <Stats />
       
+      <Stats />
+      <ChatbotSuitePromo imageSrc="/assets/images/ChatbotSuitePromo.jpg" /> 
       <HowItWorks />
       <GPTBusinessComponent imageSrc="../../public/assets/images/emprendedorapensandoenredessociales.jpg" />
       <section id="bots" className="py-16 px-6">

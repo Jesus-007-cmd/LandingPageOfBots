@@ -1,118 +1,97 @@
 // src/components/Pricing.tsx
-import React from "react";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Package, Gift, Sparkles } from 'lucide-react';
 
 interface Plan {
   title: string;
   price: string;
   features: string[];
+  icon: React.FC<React.SVGProps<SVGSVGElement>>;
 }
 
 const plans: Plan[] = [
   {
-    title: "Pack 1 Bot",
-    price: "$5 USD",
+    title: '20 Bots Premium',
+    price: '$50 USD',
+    icon: Package,
     features: [
-      "1 prompt listo",
-      "Soporte básico",
-      "Actualizaciones mensuales"
+      '20 prompts listos',
+      'Soporte prioritario',
+      'Actualizaciones semanales',
     ],
   },
   {
-    title: "Pack 5 Bots",
-    price: "$19 USD",
+    title: '30 + 10 Bots Gratis',
+    price: '$75 USD',
+    icon: Gift,
     features: [
-      "5 prompts listos",
-      "Soporte prioritario",
-      "Actualizaciones cada 2 semanas"
-    ],
-  },
-  {
-    title: "Pack 10 Bots",
-    price: "$35 USD",
-    features: [
-      "10 prompts listos",
-      "Soporte avanzado",
-      "Acceso a nuevos bots al mes"
-    ],
-  },
-  {
-    title: "Pack 30 Bots",
-    price: "$49 USD",
-    features: [
-      "30 prompts listos",
-      "Soporte premium",
-      "Actualizaciones semanales"
-    ],
-  },
-  {
-    title: "Pack 70 Bots",
-    price: "$99 USD",
-    features: [
-      "70 prompts listos",
-      "Soporte 24/7",
-      "Nuevos bots cada semana"
+      '30 prompts listos',
+      '10 prompts de regalo',
+      'Soporte premium 24/7',
     ],
   },
 ];
 
 const Pricing: React.FC = () => (
-    <section  id="pricing" className="py-16 bg-gray-900 text-white">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold mb-4">Elige tu Pack Perfecto</h2>
-        <p className="text-lg text-gray-400 mb-12">
-          Escoge el plan que mejor se adapte a tus necesidades y comienza a ahorrar
-          tiempo y recursos hoy mismo. ¡Automatiza y escala tu negocio con IA!
-        </p>
-  
-        <div className="
-          grid
-          grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5
-          gap-8
-        ">
-          {plans.map((plan, i) => (
-            <div
+  <section id="pricing" className="py-16 bg-gray-900 text-white">
+    <div className="max-w-5xl mx-auto px-6 text-center">
+      <motion.h2
+        className="text-4xl font-bold mb-4 flex items-center justify-center gap-2"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        <Sparkles className="w-8 h-8 text-pink-400 animate-pulse" />
+        Elige tu Pack Perfecto
+      </motion.h2>
+      <motion.p
+        className="text-lg text-gray-400 mb-12"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { delay: 0.2 } }}
+      >
+        Dos opciones diseñadas para impulsar tu negocio: escoge entre 20 bots o lleva 30 bots + 10 de regalo. ¡Automatiza y escala con IA!
+      </motion.p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {plans.map((plan, i) => {
+          const Icon = plan.icon;
+          return (
+            <motion.div
               key={i}
-              className="
-                bg-gray-800 
-                p-6 md:p-8        /* padding reducido en vertical */
-                rounded-2xl 
-                shadow-lg 
-                flex flex-col justify-between 
-                h-full           /* iguala alturas */
-              "
+              className="bg-gradient-to-br from-purple-800 to-indigo-800 p-8 rounded-2xl shadow-2xl flex flex-col justify-between"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3 + i * 0.2, type: 'spring', stiffness: 120 }}
+              whileHover={{ scale: 1.05 }}
             >
               <div>
-                <h3 className="text-xl font-semibold mb-2">{plan.title}</h3>
-                <p className="text-3xl md:text-4xl font-extrabold mb-4">
-                  {plan.price}
-                </p>
-                <ul className="space-y-2 mb-6 text-left">
+                <div className="flex items-center gap-3 mb-4">
+                  <Icon className="w-7 h-7 text-pink-300" />
+                  <h3 className="text-2xl font-semibold">{plan.title}</h3>
+                </div>
+                <p className="text-4xl font-extrabold mb-6">{plan.price}</p>
+                <ul className="space-y-3 mb-8 text-left">
                   {plan.features.map((feat, j) => (
-                    <li key={j} className="flex items-start">
-                      <span className="mt-1 mr-2 w-2 h-2 bg-red-500 rounded-full" />
-                      <span className="text-sm">{feat}</span>
+                    <li key={j} className="flex items-start gap-3">
+                      <span className="mt-1">
+                        <Sparkles className="w-4 h-4 text-pink-400" />
+                      </span>
+                      <span className="text-base">{feat}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-  
               <button
-                className="
-                  bg-red-600 hover:bg-red-700
-                  text-white font-medium
-                  py-3 px-6 rounded-full
-                  transition
-                  self-center
-                  mt-4
-                "
+                className="mt-4 bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-full transition self-center flex items-center gap-2"
               >
-                Comprar ahora
+                <Sparkles className="w-5 h-5 animate-pulse" /> Comprar ahora
               </button>
-            </div>
-          ))}
-        </div>
+            </motion.div>
+          );
+        })}
       </div>
-    </section>
-  );
-  
-  export default Pricing;
+    </div>
+  </section>
+);
+
+export default Pricing;
