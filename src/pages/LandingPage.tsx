@@ -9,7 +9,7 @@ import FAQ from "../components/FAQ";
 import Testimonials from "../components/Testimonials";
 import Footer from "../components/Footer";
 import BusinessCTA from "../components/BusinessCTA";
-import { bots } from "../data/bots2";
+
 import CategorySelector from "../components/CategorySelector";
 import VirtualRevolution from "../components/VirtualRevolution";
 import GPTBusinessComponent from "../components/GPTBusinessComponent";
@@ -19,10 +19,10 @@ import ChatbotSuitePromo from "../components/ChatbotSuitePromo"
 <GPTBusinessComponent imageSrc="/assets/emprendedorapensandoenredessociales.jpg" />
 
 
-const categoriasUnicas = [...new Set(bots.map(bot => bot.categoria))];
+
 
 const LandingPage: React.FC = () => {
-  const [categoriaActiva, setCategoriaActiva] = useState(categoriasUnicas[0]);
+  
   
 
   return (
