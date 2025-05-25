@@ -29,6 +29,8 @@ const LandingPage: React.FC = () => {
     <main className="bg-gray-900 text-white">
       <Hero />
       <Benefits />
+      <BusinessCTA imageSrc="/assets/images/BusinessCTA.jpg"/>
+      
       <BusinessCTA imageSrc="/assets/images/emprendedorapensandoenredessociales.jpg" />
 
       <EarlyTestimonial />
