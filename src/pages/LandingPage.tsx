@@ -43,11 +43,7 @@ const LandingPage: React.FC = () => {
       <GPTBusinessComponent imageSrc="../../public/assets/images/emprendedorapensandoenredessociales.jpg" />
       <section id="bots" className="py-16 px-6">
         <h2 className="text-3xl font-bold text-center mb-6">Nuestros Bots</h2>
-        <CategorySelector
-          categorias={categoriasUnicas}
-          categoriaSeleccionada={categoriaActiva}
-          onSeleccionar={setCategoriaActiva}
-        />
+        <CategorySelector  />
        
       </section>
 
