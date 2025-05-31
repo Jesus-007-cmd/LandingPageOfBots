@@ -1,13 +1,14 @@
 import Hero from "../components/Hero";
 import Benefits from "../components/Benefits";
-import EarlyTestimonial from "../components/EarlyTestimonial";
+
 import Stats from "../components/Stats";
 import HowItWorks from "../components/HowItWorks";
 import Pricing from "../components/Pricing";
 import FAQ from "../components/FAQ";
-import Testimonials from "../components/Testimonials";
+
 import Footer from "../components/Footer";
 import BusinessCTA from "../components/BusinessCTA";
+import TestimonialSection from "../components/TestimonialsSection";
 
 import CategorySelector from "../components/CategorySelector";
 import VirtualRevolution from "../components/VirtualRevolution";
@@ -28,12 +29,23 @@ const LandingPage: React.FC = () => {
     <main className="bg-gray-900 text-white">
       <Hero />
       <Benefits />
+      <TestimonialSection
+  image="/assets/images/testimonios/testimonio1.jpg"
+  name="Edgar Martínez"
+  comment="Una máquina de generar dinero. En menos de un mes vi resultados increíbles."
+/>
       <BusinessCTA imageSrc="/assets/images/BusinessCTA.jpg"/>
       
       <BusinessCTA imageSrc="/assets/images/emprendedorapensandoenredessociales.jpg" />
 
-      <EarlyTestimonial />
+      
       <SuiteBotsSection />
+      <TestimonialSection
+  image="/assets/images/testimonios/testimonio2.jpg"
+  name="Roger Mendoza"
+  comment="¡Qué maravilla de bots! Ya estoy monetizando a diario."
+  reverse
+/>
       <VirtualRevolution imageSrc="../../public/assets/images/redessocialesrelojgraficagirl.jpg" />
       
       <Stats />
@@ -47,8 +59,14 @@ const LandingPage: React.FC = () => {
       </section>
 
       <Pricing />
+      <TestimonialSection
+  image="/assets/images/testimonios/testimonio3.jpg"
+  name="Mayely Franco"
+  comment="Los bots me cambiaron la vida. Por fin logré monetizar. ❤️‍🔥"
+/>
+
       <FAQ />
-      <Testimonials />
+      
       <Footer />
     </main>
   );
