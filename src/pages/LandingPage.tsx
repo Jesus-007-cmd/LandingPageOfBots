@@ -22,51 +22,51 @@ import ChatbotSuitePromo from "../components/ChatbotSuitePromo"
 
 
 const LandingPage: React.FC = () => {
-  
-  
+
+
 
   return (
     <main className="bg-gray-900 text-white">
       <Hero />
       <Benefits />
       <TestimonialSection
-  image="/assets/images/testimonios/testimonio1.jpg"
-  name="Edgar Martínez"
-  comment="Una máquina de generar dinero. En menos de un mes vi resultados increíbles."
-/>
-      <BusinessCTA imageSrc="/assets/images/BusinessCTA.webp"/>
-      
-      
+        image="/assets/images/testimonios/testimonio1.jpg"
+        name="Edgar Martínez"
+        comment="Una máquina de generar dinero. En menos de un mes vi resultados increíbles."
+      />
+      <BusinessCTA imageSrc="/assets/images/BusinessCTA.webp" />
 
-      
+
+
+
       <SuiteBotsSection />
       <TestimonialSection
-  image="/assets/images/testimonios/testimonio2.jpg"
-  name="Roger Mendoza"
-  comment="¡Qué maravilla de bots! Ya estoy monetizando a diario."
-  reverse
-/>
+        image="/assets/images/testimonios/testimonio2.jpg"
+        name="Roger Mendoza"
+        comment="¡Qué maravilla de bots! Ya estoy monetizando a diario."
+        reverse
+      />
       <VirtualRevolution imageSrc="../../public/assets/images/redessocialesrelojgraficagirl.webp" />
-      
+
       <Stats />
-      <ChatbotSuitePromo imageSrc="/assets/images/ChatbotSuitePromo.webp" /> 
+      <ChatbotSuitePromo imageSrc="/assets/images/ChatbotSuitePromo.webp" />
       <HowItWorks />
       <GPTBusinessComponent imageSrc="../../public/assets/images/emprendedorapensandoenredessociales.webp" />
       <section id="bots" className="py-16 px-6">
         <h2 className="text-3xl font-bold text-center mb-6">Nuestros Bots</h2>
-        <CategorySelector  />
-       
+        <CategorySelector />
+
       </section>
 
       <Pricing />
       <TestimonialSection
-  image="/assets/images/testimonios/testimonio3.jpg"
-  name="Mayely Franco"
-  comment="Los bots me cambiaron la vida. Por fin logré monetizar. ❤️‍🔥"
-/>
+        image="/assets/images/testimonios/testimonio3.jpg"
+        name="Mayely Franco"
+        comment="Los bots me cambiaron la vida. Por fin logré monetizar. ❤️‍🔥"
+      />
 
       <FAQ />
-      
+
       <Footer />
     </main>
   );
