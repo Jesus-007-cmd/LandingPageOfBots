@@ -27,12 +27,13 @@ const ChatbotSuitePromo: React.FC<ChatbotSuitePromoProps> = ({ imageSrc }) => {
 
   return (
     <motion.section
-      className="w-full max-w-[1300px] mx-auto bg-gradient-to-r from-blue-900 to-indigo-700 text-white rounded-3xl shadow-2xl flex flex-col lg:flex-row items-center justify-between py-14 px-6 lg:px-16"
+      className="w-full max-w-[1300px] mx-auto bg-gray-900 text-white rounded-3xl shadow-2xl flex flex-col lg:flex-row items-center justify-between py-14 px-6 lg:px-16 border border-white/10"
       variants={container}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.3 }}
     >
+
       {/* Texto */}
       <motion.div className="w-full lg:w-1/2 space-y-6" variants={item}>
         <h2 className="text-3xl lg:text-4xl font-extrabold flex items-center gap-3">
@@ -62,32 +63,35 @@ const ChatbotSuitePromo: React.FC<ChatbotSuitePromoProps> = ({ imageSrc }) => {
           Mejora la eficiencia, incrementa la productividad y asegura un crecimiento sostenido con tecnología avanzada, ajustada a las necesidades de tu negocio. ¡Transforma tu forma de trabajar con nuestra suite de bots!
         </p>
 
-        <motion.a
-          href="#pricing"
-          variants={item}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-bold text-lg py-3 px-8 rounded-full shadow-lg uppercase tracking-wide mt-4"
-        >
-          <Rocket className="w-5 h-5" /> ¡Empieza hoy mismo!
-        </motion.a>
+
       </motion.div>
 
       {/* Imagen */}
       {imageSrc && (
         <motion.div
-          className="w-full lg:w-[50%] mt-10 lg:mt-0 lg:pl-12 flex justify-center items-center"
+          className="w-full lg:w-1/2 mt-10 lg:mt-0 lg:pl-12 flex flex-col items-center gap-6"
           variants={item}
         >
-          <div className="w-full max-w-[500px] h-[300px] sm:h-[350px] lg:h-[400px] rounded-2xl overflow-hidden shadow-inner border-4 border-white bg-black/20">
+          <div className="relative w-full max-w-[500px] h-[400px] rounded-2xl overflow-hidden shadow-xl">
             <img
               src={imageSrc}
               alt="Ilustración de bots en acción"
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain border-4 border-white shadow-[0_0_15px_rgba(255,255,255,0.2)]  rounded-2xl"
             />
           </div>
+
+          <motion.a
+            href="#pricing"
+            variants={item}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-bold text-lg py-3 px-8 rounded-full shadow-lg uppercase tracking-wide"
+          >
+            <Rocket className="w-5 h-5" /> ¡Empieza hoy mismo!
+          </motion.a>
         </motion.div>
       )}
+
     </motion.section>
   );
 };

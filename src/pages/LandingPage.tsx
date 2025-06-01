@@ -34,9 +34,9 @@ const LandingPage: React.FC = () => {
   name="Edgar Martínez"
   comment="Una máquina de generar dinero. En menos de un mes vi resultados increíbles."
 />
-      <BusinessCTA imageSrc="/assets/images/BusinessCTA.jpg"/>
+      <BusinessCTA imageSrc="/assets/images/BusinessCTA.webp"/>
       
-      <BusinessCTA imageSrc="/assets/images/emprendedorapensandoenredessociales.jpg" />
+      
 
       
       <SuiteBotsSection />
@@ -49,7 +49,7 @@ const LandingPage: React.FC = () => {
       <VirtualRevolution imageSrc="../../public/assets/images/redessocialesrelojgraficagirl.jpg" />
       
       <Stats />
-      <ChatbotSuitePromo imageSrc="/assets/images/ChatbotSuitePromo.jpg" /> 
+      <ChatbotSuitePromo imageSrc="/assets/images/ChatbotSuitePromo.webp" /> 
       <HowItWorks />
       <GPTBusinessComponent imageSrc="../../public/assets/images/emprendedorapensandoenredessociales.jpg" />
       <section id="bots" className="py-16 px-6">
