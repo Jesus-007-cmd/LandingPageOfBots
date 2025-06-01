@@ -46,12 +46,12 @@ const LandingPage: React.FC = () => {
         comment="¡Qué maravilla de bots! Ya estoy monetizando a diario."
         reverse
       />
-      <VirtualRevolution imageSrc="../../public/assets/images/redessocialesrelojgraficagirl.webp" />
+      <VirtualRevolution imageSrc="/public/assets/images/redessocialesrelojgraficagirl.webp" />
 
       <Stats />
       <ChatbotSuitePromo imageSrc="/assets/images/ChatbotSuitePromo.webp" />
       <HowItWorks />
-      <GPTBusinessComponent imageSrc="../../public/assets/images/emprendedorapensandoenredessociales.webp" />
+      <GPTBusinessComponent imageSrc="/assets/images/emprendedorapensandoenredessociales.webp" />
       <section id="bots" className="py-16 px-6">
         <h2 className="text-3xl font-bold text-center mb-6">Nuestros Bots</h2>
         <CategorySelector />
