@@ -44,14 +44,14 @@
     }
   ],
   "imagesBetween": [
-    "../../public/assets/images/botsmonetizadores.webp",
-    "../../public/assets/images/aprovecha5botsgratis.webp",
-    "../../public/assets/images/redessocmaqingresos.webp",
-    "../../public/assets/images/cubobotsmonetizadores.webp",
-    "../../public/assets/images/suitedebotsmonetizadoresderedessociales2.webp",
-    "../../public/assets/images/suitedebotsmonetizadoresderedessociales.webp",
-    "../../public/assets/images/redessocialesrelojgraficagirl.webp",
-    "../../public/assets/images/aprovecha10botsgratis.webp"
+    "/assets/images/botsmonetizadores.webp",
+    "/assets/images/aprovecha5botsgratis.webp",
+    "/assets/images/redessocmaqingresos.webp",
+    "/assets/images/cubobotsmonetizadores.webp",
+    "/assets/images/suitedebotsmonetizadoresderedessociales2.webp",
+    "/assets/images/suitedebotsmonetizadoresderedessociales.webp",
+    "/assets/images/redessocialesrelojgraficagirl.webp",
+    "/assets/images/aprovecha10botsgratis.webp"
   ],
   "cta": "¡Empieza hoy mismo!"
 }

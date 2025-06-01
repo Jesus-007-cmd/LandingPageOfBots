@@ -46,7 +46,7 @@ const LandingPage: React.FC = () => {
         comment="¡Qué maravilla de bots! Ya estoy monetizando a diario."
         reverse
       />
-      <VirtualRevolution imageSrc="/public/assets/images/redessocialesrelojgraficagirl.webp" />
+      <VirtualRevolution imageSrc="/assets/images/redessocialesrelojgraficagirl.webp" />
 
       <Stats />
       <ChatbotSuitePromo imageSrc="/assets/images/ChatbotSuitePromo.webp" />
