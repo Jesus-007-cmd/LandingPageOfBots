@@ -79,7 +79,7 @@ const CategorySelector: React.FC = () => {
         </div>
 
         {/* ═══ Columna de Bots con fondo decorativo a la derecha ═════════ */}
-        <div className="relative w-full sm:w-3/4 p-6 overflow-y-auto">
+        <div className="relative w-full sm:w-4/4 p-6 overflow-y-auto">
 
           {/* Imagen de fondo decorativa */}
           <div className="absolute top-0 right-0 w-full h-full z-0 pointer-events-none">
