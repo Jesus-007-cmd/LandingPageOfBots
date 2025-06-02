@@ -1,4 +1,3 @@
-// src/components/CategorySelector.tsx
 import React, { useState, useRef, useMemo } from "react";
 import { bots } from "../data/bots2";
 import BotCard from "./BotCard";
@@ -10,7 +9,6 @@ const CategorySelector: React.FC = () => {
   const [filtro, setFiltro] = useState("");
   const listRef = useRef<HTMLUListElement>(null);
 
-  // Filtrar categorías según el input
   const categoriasFiltradas = useMemo(
     () =>
       categoriasUnicas.filter((cat) =>
@@ -19,22 +17,19 @@ const CategorySelector: React.FC = () => {
     [filtro]
   );
 
-  // Filtrar bots según categoría seleccionada
   const botsFiltrados = useMemo(
     () => bots.filter((b) => b.categoria === categoriaActiva),
     [categoriaActiva]
   );
 
   return (
-    <div className="flex justify-center py-10">
-      <div className="flex flex-col sm:flex-row w-full max-w-7xl min-h-[80vh] bg-[#0f172a] rounded-xl shadow-lg overflow-hidden">
+    <div className="relative flex justify-center py-10">
+      {/* Contenedor principal */}
+      <div className="relative z-10 flex flex-col sm:flex-row w-full max-w-7xl min-h-[80vh] bg-[#0f172a] rounded-xl shadow-lg overflow-hidden">
 
         {/* ═══ Columna de Categorías ═══════════════════════════════════════ */}
         <div className="w-full sm:w-1/4 bg-gray-900 text-white p-4 flex flex-col sm:items-center">
-          {/* Título */}
           <h2 className="text-2xl font-bold mb-4">Categorías</h2>
-
-          {/* Buscador */}
           <input
             type="text"
             placeholder="Filtrar..."
@@ -42,8 +37,6 @@ const CategorySelector: React.FC = () => {
             onChange={(e) => setFiltro(e.target.value)}
             className="w-full px-3 py-2 mb-4 bg-gray-800 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-
-          {/* Lista responsiva: scroll horizontal en móvil, vertical en desktop */}
           <div className="relative w-full">
             <ul
               ref={listRef}
@@ -80,28 +73,38 @@ const CategorySelector: React.FC = () => {
                 </li>
               ))}
             </ul>
-
-            {/* Fade superior */}
             <div className="pointer-events-none absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-gray-900 to-transparent" />
-            {/* Fade inferior */}
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-gray-900 to-transparent" />
           </div>
         </div>
 
-        {/* ═══ Columna de Bots ═══════════════════════════════════════════ */}
-        <div className="w-full sm:w-3/4 p-6 overflow-y-auto">
-          <h3 className="text-2xl font-bold text-white text-center mb-6 border-b border-gray-700 pb-2">
-            {categoriaActiva}
-          </h3>
-          <div className="grid justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {botsFiltrados.map((bot) => (
-              <BotCard
-                key={bot.nombre}
-                nombre={bot.nombre}
-                descripcion={bot.descripcion}
-                imagen={bot.imagen}
-              />
-            ))}
+        {/* ═══ Columna de Bots con fondo decorativo a la derecha ═════════ */}
+        <div className="relative w-full sm:w-3/4 p-6 overflow-y-auto">
+
+          {/* Imagen de fondo decorativa */}
+          <div className="absolute top-0 right-0 w-full h-full z-0 pointer-events-none">
+            <img
+              src="/assets/images/botsprofesionales.webp"
+              alt="Fondo decorativo de bots"
+              className="w-full h-full object-cover opacity-10"
+            />
+          </div>
+
+          {/* Contenido principal de los bots */}
+          <div className="relative z-10">
+            <h3 className="text-2xl font-bold text-white text-center mb-6 border-b border-gray-700 pb-2">
+              {categoriaActiva}
+            </h3>
+            <div className="grid justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {botsFiltrados.map((bot) => (
+                <BotCard
+                  key={bot.nombre}
+                  nombre={bot.nombre}
+                  descripcion={bot.descripcion}
+                  imagen={bot.imagen}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

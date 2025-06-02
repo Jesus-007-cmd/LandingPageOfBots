@@ -15,6 +15,7 @@ import VirtualRevolution from "../components/VirtualRevolution";
 import GPTBusinessComponent from "../components/GPTBusinessComponent";
 import SuiteBotsSection from "../components/SuiteBotsSection"
 import ChatbotSuitePromo from "../components/ChatbotSuitePromo"
+import FinalCallToAction from "../components/FinalCallToAction"
 // En tu página…
 <GPTBusinessComponent imageSrc="/assets/emprendedorapensandoenredessociales.jpg" />
 
@@ -30,7 +31,7 @@ const LandingPage: React.FC = () => {
       <Hero />
       <Benefits />
       <TestimonialSection
-        image="/assets/images/testimonios/testimonio1.jpg"
+        image="/assets/images/testimonios/testimonio2.jpg"
         name="Edgar Martínez"
         comment="Una máquina de generar dinero. En menos de un mes vi resultados increíbles."
       />
@@ -41,7 +42,7 @@ const LandingPage: React.FC = () => {
 
       <SuiteBotsSection />
       <TestimonialSection
-        image="/assets/images/testimonios/testimonio2.jpg"
+        image="/assets/images/testimonios/testimonio3.jpg"
         name="Roger Mendoza"
         comment="¡Qué maravilla de bots! Ya estoy monetizando a diario."
         reverse
@@ -60,13 +61,14 @@ const LandingPage: React.FC = () => {
 
       <Pricing />
       <TestimonialSection
-        image="/assets/images/testimonios/testimonio3.jpg"
+        image="/assets/images/testimonios/testimonio1.jpg"
         name="Mayely Franco"
         comment="Los bots me cambiaron la vida. Por fin logré monetizar. ❤️‍🔥"
       />
 
       <FAQ />
-
+      <FinalCallToAction />
+      
       <Footer />
     </main>
   );

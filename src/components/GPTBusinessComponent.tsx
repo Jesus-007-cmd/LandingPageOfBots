@@ -67,7 +67,7 @@ const GPTBusinessComponent: React.FC<GPTBusinessProps> = ({ imageSrc }) => {
           </ul>
 
           <p className="text-gray-400 italic">
-            Inversión desde <strong className="text-white">$500</strong>.  
+            Inversión desde <strong className="text-white">$50dlls </strong>.  
             ¿Qué área de tu negocio se beneficiaría más?
           </p>
 
