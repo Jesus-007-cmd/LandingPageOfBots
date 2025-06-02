@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Flame, Rocket, AlertTriangle, ArrowRight } from "lucide-react";
+import { Flame,  ArrowRight } from "lucide-react";
 
 const FinalCallToAction: React.FC = () => {
   return (
