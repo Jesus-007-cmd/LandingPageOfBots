@@ -99,11 +99,15 @@ const Pricing: React.FC = () => (
                   ))}
                 </ul>
               </div>
-              <button
-                className="mt-4 bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-full transition self-center flex items-center gap-2"
-              >
-                <Sparkles className="w-5 h-5 animate-pulse" /> {plan.buttonLabel}
-              </button>
+              <a
+  href={i === 0 ? "https://mpago.la/1JiuA5e" : "https://mpago.la/24JE8b7"}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-4 bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-full transition self-center flex items-center gap-2"
+>
+  <Sparkles className="w-5 h-5 animate-pulse" /> {plan.buttonLabel}
+</a>
+
             </motion.div>
           );
         })}
