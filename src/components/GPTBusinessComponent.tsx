@@ -72,13 +72,15 @@ const GPTBusinessComponent: React.FC<GPTBusinessProps> = ({ imageSrc }) => {
           </p>
 
           <div className="mt-6 flex justify-center lg:justify-start">
-            <button
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-blue-500
-                         hover:from-indigo-700 hover:to-blue-600 text-white font-semibold py-3 px-8
-                         rounded-full transition-shadow shadow-lg hover:shadow-xl"
-            >
-              ¡Hablemos de tu GPT!
-            </button>
+          <a
+  href="#pricing"
+  className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-blue-500
+             hover:from-indigo-700 hover:to-blue-600 text-white font-semibold py-3 px-8
+             rounded-full transition-shadow shadow-lg hover:shadow-xl"
+>
+  ¡Hablemos de tu GPT!
+</a>
+
           </div>
         </div>
 

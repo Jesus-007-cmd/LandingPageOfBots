@@ -1,7 +1,9 @@
 // src/components/Pricing.tsx
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Gift, Package, Sparkles } from 'lucide-react';
+import AfterPaymentInfo from './AfterPaymentInfo';
+
 
 interface Plan {
   title: string;
@@ -13,6 +15,7 @@ interface Plan {
   highlight?: string;
   fullDescription: string;
 }
+
 
 const plans: Plan[] = [
   {
@@ -48,7 +51,17 @@ const plans: Plan[] = [
   },
 ];
 
-const Pricing: React.FC = () => (
+const Pricing: React.FC = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedLink, setSelectedLink] = useState("");
+
+  const handleOpenModal = (link: string) => {
+    setSelectedLink(link);
+    setShowModal(true);
+  };
+
+  return (
+  
   <section id="pricing" className="relative py-20 bg-gradient-to-br from-gray-900 to-black text-white overflow-hidden">
 
 
@@ -100,12 +113,11 @@ const Pricing: React.FC = () => (
                 </ul>
               </div>
               <a
-  href={i === 0 ? "https://mpago.la/1JiuA5e" : "https://mpago.la/24JE8b7"}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="mt-4 bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-full transition self-center flex items-center gap-2"
+  onClick={() => handleOpenModal(i === 0 ? "https://mpago.la/1JiuA5e" : "https://mpago.la/24JE8b7")}
+  className="cursor-pointer mt-4 bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-full transition self-center flex items-center gap-2"
 >
-  <Sparkles className="w-5 h-5 animate-pulse" /> {plan.buttonLabel}
+  <Sparkles className="w-5 h-5 animate-pulse" />
+  {plan.buttonLabel}
 </a>
 
             </motion.div>
@@ -113,7 +125,28 @@ const Pricing: React.FC = () => (
         })}
       </div>
     </div>
+    {showModal && (
+  <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center">
+    <div className="bg-gray-900 p-8 rounded-2xl shadow-2xl w-full max-w-lg border border-pink-600 relative">
+      <AfterPaymentInfo />
+      <a
+        href={selectedLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-6 inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition w-full text-center"
+      >
+        Ir a pagar con Mercado Pago
+      </a>
+      <button
+        onClick={() => setShowModal(false)}
+        className="absolute top-2 right-2 text-pink-400 hover:text-white text-xl font-bold"
+      >
+        ×
+      </button>
+    </div>
+  </div>
+)}
   </section>
 );
-
+    }
 export default Pricing;

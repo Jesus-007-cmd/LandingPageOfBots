@@ -5,11 +5,12 @@ import suiteData from '../data/suiteBotsContent.json';
 
 const container = {
   hidden: { opacity: 0, y: 30 },
-  show:  { opacity: 1, y: 0, transition: { staggerChildren: 0.2, ease: 'easeOut' } }
+  show: { opacity: 1, y: 0, transition: { staggerChildren: 0.2, ease: 'easeOut' } },
 };
+
 const item = {
   hidden: { opacity: 0, y: 20 },
-  show:   { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 120 } }
+  show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 120 } },
 };
 
 const SuiteBotsSection: React.FC = () => {
@@ -53,8 +54,7 @@ const SuiteBotsSection: React.FC = () => {
 
       <motion.h2
         variants={item}
-        className="text-5xl sm:text-6xl font-extrabold text-center mb-8
-                   bg-gradient-to-r from-indigo-400 to-blue-300 bg-clip-text text-transparent drop-shadow-xl"
+        className="text-5xl sm:text-6xl font-extrabold text-center mb-8 bg-gradient-to-r from-indigo-400 to-blue-300 bg-clip-text text-transparent drop-shadow-xl"
       >
         {title}
       </motion.h2>
@@ -74,12 +74,8 @@ const SuiteBotsSection: React.FC = () => {
         <div ref={carouselRef} className="overflow-hidden">
           <div className="flex snap-x snap-mandatory scroll-smooth">
             {sections.map((sec, idx) => {
-              const fullText = `${sec.content1}
-
-${sec.content2}`;
-              const summary = fullText.length > 150
-                ? fullText.slice(0, 150) + '…'
-                : fullText;
+              const fullText = `${sec.content1}  ${sec.content2}`;
+              const summary = fullText.length > 150 ? fullText.slice(0, 150) + '…' : fullText;
               return (
                 <motion.div
                   key={idx}
@@ -90,9 +86,10 @@ ${sec.content2}`;
                 >
                   <div
                     className={`flex flex-col lg:flex-row items-center gap-6 p-6 rounded-3xl shadow-2xl min-h-[400px]
-                      ${idx % 2 === 0
+                    ${idx % 2 === 0
                         ? 'bg-gradient-to-br from-gray-800 to-gray-700'
-                        : 'bg-gradient-to-br from-purple-800 to-pink-900'}`}
+                        : 'bg-gradient-to-br from-purple-800 to-pink-900'
+                      }`}
                   >
                     <div className="flex-1 px-4">
                       <h3 className="text-2xl lg:text-3xl font-semibold text-white mb-3">
@@ -134,23 +131,19 @@ ${sec.content2}`;
           {sections.map((_, idx) => (
             <span
               key={idx}
-              className={`w-3 h-3 rounded-full ${
-                activeIdx === idx ? 'bg-white' : 'bg-gray-500'
-              } transition`}
+              className={`w-3 h-3 rounded-full ${activeIdx === idx ? 'bg-white' : 'bg-gray-500'} transition`}
             />
           ))}
         </div>
       </motion.div>
 
       <motion.div variants={item} className="mt-16 flex justify-center">
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: 'spring', stiffness: 300 }}
-          className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-500 text-white font-bold text-lg py-3 px-8 rounded-full shadow-2xl uppercase animate-pulse"
+        <a
+          href="#pricing"
+          className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-500 text-white font-bold text-lg py-3 px-8 rounded-full shadow-2xl uppercase animate-pulse transition-all"
         >
           {cta}
-        </motion.button>
+        </a>
       </motion.div>
 
       {openIdx !== null && (
