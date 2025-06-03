@@ -1,15 +1,18 @@
 const ThankYou40: React.FC = () => {
     return (
-      <main className="text-white bg-gray-900 min-h-screen flex flex-col items-center justify-center px-6 text-center">
-        <h1 className="text-4xl font-bold mb-4">¡Gracias por tu compra del paquete de 20 bots!</h1>
-        <p className="mb-6 text-lg">Haz clic abajo para descargar tu archivo PDF con los bots.</p>
+      <main className="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center px-6 text-center">
+        <h1 className="text-4xl font-bold mb-4">¡Gracias por adquirir el paquete de 40 bots! 🚀</h1>
+        <p className="mb-6 text-lg max-w-xl">
+          Aquí tienes acceso a tu suite completa de 30 bots + 10 de regalo. Descarga el PDF ahora mismo.
+        </p>
         <a
-          href="/assets/pdf/20bots.pdf"
+          href="/assets/pdf/suite_40_bots_promo.pdf"
           download
-          className="bg-pink-600 hover:bg-pink-700 text-white py-3 px-6 rounded-full font-semibold"
+          className="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-8 rounded-full font-semibold shadow-lg transition-all"
         >
-          Descargar PDF
+          Descargar Paquete de 40 Bots
         </a>
+  
       </main>
     );
   };
