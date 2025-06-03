@@ -16,10 +16,10 @@ interface GPTBusinessProps {
 const GPTBusinessComponent: React.FC<GPTBusinessProps> = ({ imageSrc }) => {
   return (
     <section className="bg-gray-900 text-center  py-16 px-6 sm:px-12 lg:px-24">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white">
-            Imagina tener una herramienta en tu negocio que no solo responde
-            preguntas, sino que entiende a fondo las necesidades de tus clientes.
-          </h2>
+      <h2 className="text-3xl sm:text-4xl font-bold text-white">
+        Imagina tener una herramienta en tu negocio que no solo responde
+        preguntas, sino que entiende a fondo las necesidades de tus clientes.
+      </h2>
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Bloque de texto */}
         <div className="flex-1 text-center lg:text-left space-y-6">
@@ -67,19 +67,19 @@ const GPTBusinessComponent: React.FC<GPTBusinessProps> = ({ imageSrc }) => {
           </ul>
 
           <p className="text-gray-400 italic">
-            Inversión desde <strong className="text-white">$50dlls </strong>.  
+            Inversión desde <strong className="text-white">$50dlls </strong>.
             ¿Qué área de tu negocio se beneficiaría más?
           </p>
 
           <div className="mt-6 flex justify-center lg:justify-start">
-          <a
-  href="#pricing"
-  className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-blue-500
+            <a
+              href="#pricing"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-blue-500
              hover:from-indigo-700 hover:to-blue-600 text-white font-semibold py-3 px-8
              rounded-full transition-shadow shadow-lg hover:shadow-xl"
->
-  ¡Hablemos de tu GPT!
-</a>
+            >
+              ¡Hablemos de tu GPT!
+            </a>
 
           </div>
         </div>

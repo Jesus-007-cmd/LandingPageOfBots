@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Gift, Package, Sparkles } from 'lucide-react';
-import AfterPaymentInfo from './AfterPaymentInfo';
+
 
 
 interface Plan {
@@ -61,92 +61,75 @@ const Pricing: React.FC = () => {
   };
 
   return (
-  
-  <section id="pricing" className="relative py-20 bg-gradient-to-br from-gray-900 to-black text-white overflow-hidden">
+
+    <section id="pricing" className="relative py-20 bg-gradient-to-br from-gray-900 to-black text-white overflow-hidden">
 
 
-    <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
-      <motion.h2
-        className="text-4xl md:text-5xl font-bold mb-4 flex items-center justify-center gap-2"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        <Sparkles className="w-8 h-8 text-pink-400 animate-pulse" />
-        Planes que Impulsan tu Negocio
-      </motion.h2>
-      <motion.p
-        className="text-lg text-gray-400 mb-12 max-w-3xl mx-auto"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { delay: 0.2 } }}
-      >
-        Escoge el paquete que mejor se adapte a tus metas y empieza a automatizar con GPTs listos para ti.
-      </motion.p>
+      <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
+        <motion.h2
+          className="text-4xl md:text-5xl font-bold mb-4 flex items-center justify-center gap-2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <Sparkles className="w-8 h-8 text-pink-400 animate-pulse" />
+          Planes que Impulsan tu Negocio
+        </motion.h2>
+        <motion.p
+          className="text-lg text-gray-400 mb-12 max-w-3xl mx-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { delay: 0.2 } }}
+        >
+          Escoge el paquete que mejor se adapte a tus metas y empieza a automatizar con GPTs listos para ti.
+        </motion.p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        {plans.map((plan, i) => {
-          const Icon = plan.icon;
-          return (
-            <motion.div
-              key={i}
-              className="bg-black/50 backdrop-blur-md border border-purple-600 p-8 rounded-3xl shadow-lg flex flex-col justify-between hover:shadow-pink-400/40 transition duration-300"
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {plans.map((plan, i) => {
+            const Icon = plan.icon;
+            return (
+              <motion.div
+                key={i}
+                className="bg-black/50 backdrop-blur-md border border-purple-600 p-8 rounded-3xl shadow-lg flex flex-col justify-between hover:shadow-pink-400/40 transition duration-300"
 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3 + i * 0.2, type: 'spring', stiffness: 120 }}
-              whileHover={{ scale: 1.03 }}
-            >
-              <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <Icon className="w-7 h-7 text-pink-300" />
-                  <h3 className="text-2xl font-semibold">{plan.title}</h3>
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3 + i * 0.2, type: 'spring', stiffness: 120 }}
+                whileHover={{ scale: 1.03 }}
+              >
+                <div>
+                  <div className="flex items-center gap-3 mb-2">
+                    <Icon className="w-7 h-7 text-pink-300" />
+                    <h3 className="text-2xl font-semibold">{plan.title}</h3>
+                  </div>
+                  <p className="text-sm italic text-pink-200 mb-2">{plan.subtitle}</p>
+                  <p className="text-base text-gray-300 mb-4">{plan.fullDescription}</p>
+                  <p className="text-4xl font-extrabold mb-6">{plan.price}</p>
+                  <ul className="space-y-3 mb-8 text-left">
+                    {plan.features.map((feat, j) => (
+                      <li key={j} className="flex items-start gap-3">
+                        <Sparkles className="w-5 h-5 text-pink-400 mt-1 animate-pulse" />
+                        <span className="text-base">{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <p className="text-sm italic text-pink-200 mb-2">{plan.subtitle}</p>
-                <p className="text-base text-gray-300 mb-4">{plan.fullDescription}</p>
-                <p className="text-4xl font-extrabold mb-6">{plan.price}</p>
-                <ul className="space-y-3 mb-8 text-left">
-                  {plan.features.map((feat, j) => (
-                    <li key={j} className="flex items-start gap-3">
-                      <Sparkles className="w-5 h-5 text-pink-400 mt-1 animate-pulse" />
-                      <span className="text-base">{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <a
-  onClick={() => handleOpenModal(i === 0 ? "https://mpago.la/1JiuA5e" : "https://mpago.la/24JE8b7")}
-  className="cursor-pointer mt-4 bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-full transition self-center flex items-center gap-2"
->
-  <Sparkles className="w-5 h-5 animate-pulse" />
-  {plan.buttonLabel}
-</a>
+                <a
+                  href={i === 0 ? "https://mpago.la/1JiuA5e" : "https://mpago.la/24JE8b7"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-full transition self-center flex items-center gap-2"
+                >
+                  <Sparkles className="w-5 h-5 animate-pulse" />
+                  {plan.buttonLabel}
+                </a>
 
-            </motion.div>
-          );
-        })}
+
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
-    </div>
-    {showModal && (
-  <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center">
-    <div className="bg-gray-900 p-8 rounded-2xl shadow-2xl w-full max-w-lg border border-pink-600 relative">
-      <AfterPaymentInfo />
-      <a
-        href={selectedLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-6 inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition w-full text-center"
-      >
-        Ir a pagar con Mercado Pago
-      </a>
-      <button
-        onClick={() => setShowModal(false)}
-        className="absolute top-2 right-2 text-pink-400 hover:text-white text-xl font-bold"
-      >
-        ×
-      </button>
-    </div>
-  </div>
-)}
-  </section>
-);
-    }
+
+    </section>
+  );
+}
 export default Pricing;
