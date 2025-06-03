@@ -1,11 +1,11 @@
-import { FileText, ShieldCheck, AlertTriangle, Info } from "lucide-react";
+
 
 const LegalDisclaimer: React.FC = () => {
   return (
     <section className="bg-gray-950 text-gray-300 px-6 py-16 border-t border-gray-800">
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-3 mb-4">
-          <FileText className="w-6 h-6 text-pink-500" />
+          
           <h2 className="text-2xl font-bold text-white">
             Disclaimer de Responsabilidad y Propiedad Intelectual
           </h2>
@@ -16,7 +16,7 @@ const LegalDisclaimer: React.FC = () => {
         </p>
 
         <div className="flex items-center gap-2 mb-2">
-          <ShieldCheck className="w-5 h-5 text-indigo-400" />
+          
           <h3 className="font-semibold text-white">Uso y Resultados</h3>
         </div>
         <p className="mb-6">
@@ -24,7 +24,7 @@ const LegalDisclaimer: React.FC = () => {
         </p>
 
         <div className="flex items-center gap-2 mb-2">
-          <AlertTriangle className="w-5 h-5 text-yellow-400" />
+          
           <h3 className="font-semibold text-white">Limitaciones Técnicas</h3>
         </div>
         <p className="mb-6">
@@ -32,7 +32,7 @@ const LegalDisclaimer: React.FC = () => {
         </p>
 
         <div className="flex items-center gap-2 mb-2">
-          <Info className="w-5 h-5 text-blue-400" />
+          
           <h3 className="font-semibold text-white">Nota sobre Publicidad y Propiedad</h3>
         </div>
         <p className="mb-6">
