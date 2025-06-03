@@ -1,6 +1,6 @@
 import Hero from "../components/Hero";
 import Benefits from "../components/Benefits";
-
+import LegalDisclaimer from "../components/LegalDisclaimer";
 import Stats from "../components/Stats";
 import HowItWorks from "../components/HowItWorks";
 import Pricing from "../components/Pricing";
@@ -68,7 +68,7 @@ const LandingPage: React.FC = () => {
 
       <FAQ />
       <FinalCallToAction />
-      
+      <LegalDisclaimer />
       <Footer />
     </main>
   );
