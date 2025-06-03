@@ -51,16 +51,7 @@ const plans: Plan[] = [
   },
 ];
 
-const Pricing: React.FC = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [selectedLink, setSelectedLink] = useState("");
-
-  const handleOpenModal = (link: string) => {
-    setSelectedLink(link);
-    setShowModal(true);
-  };
-
-  return (
+const Pricing: React.FC = () =>  (
 
     <section id="pricing" className="relative py-20 bg-gradient-to-br from-gray-900 to-black text-white overflow-hidden">
 
@@ -131,5 +122,5 @@ const Pricing: React.FC = () => {
 
     </section>
   );
-}
+
 export default Pricing;
