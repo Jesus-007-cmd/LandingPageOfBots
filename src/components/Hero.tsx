@@ -6,17 +6,18 @@ const Hero: React.FC = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
-  const [volume, setVolume] = useState(0.5); // Valor inicial 50%
+  const [volume, setVolume] = useState(0.5);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       if (audioRef.current) {
         audioRef.current.volume = volume;
-        audioRef.current.play().catch((err) => {
-          console.warn("Reproducción bloqueada:", err);
+        audioRef.current.play().then(() => {
+          setIsPlaying(true);
+          setHasStarted(true);
+        }).catch(err => {
+          console.warn("Autoplay bloqueado:", err);
         });
-        setIsPlaying(true);
-        setHasStarted(true);
       }
     }, 5000);
     return () => clearTimeout(timer);
@@ -40,6 +41,15 @@ const Hero: React.FC = () => {
     }
   };
 
+  const handleButtonClick = () => {
+    if (audioRef.current && !isPlaying) {
+      audioRef.current.play();
+      setIsPlaying(true);
+      setHasStarted(true);
+    }
+    document.querySelector("#bots")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section
       className="
@@ -47,6 +57,7 @@ const Hero: React.FC = () => {
         bg-[url('/pattern-waves.svg')] bg-cover bg-center
         flex flex-col justify-center items-center text-center
         text-white
+        px-4
       "
     >
       <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
@@ -56,25 +67,27 @@ const Hero: React.FC = () => {
         Automatiza tareas, mejora tus ventas y ofrece atención 24/7 con inteligencia artificial.
       </p>
       <button
-  onClick={() => {
-    audioRef.current?.play();
-    setIsPlaying(true);
-    setHasStarted(true);
-    document.querySelector("#bots")?.scrollIntoView({ behavior: "smooth" });
-  }}
-  className="
-    bg-red-600 hover:bg-red-700
-    px-6 py-3 rounded-full
-    font-medium uppercase tracking-wide
-    transition
-  "
->
-  Ver Bots
-</button>
+        onClick={handleButtonClick}
+        className="
+          bg-red-600 hover:bg-red-700
+          px-6 py-3 rounded-full
+          font-medium uppercase tracking-wide
+          transition
+        "
+      >
+        Ver Bots
+      </button>
 
-
-      {/* Control de audio */}
-      <div className="absolute bottom-6 right-6 flex items-center gap-4 bg-black/40 px-4 py-2 rounded-xl backdrop-blur-lg">
+      {/* 🎵 Control de audio */}
+      <div
+        className="
+          absolute bottom-6 right-6
+          flex items-center gap-4
+          bg-black/40 px-4 py-2 rounded-xl
+          backdrop-blur-lg
+          z-10
+        "
+      >
         <button onClick={toggleAudio} className="p-2 rounded-full hover:bg-white/10 transition">
           {isPlaying ? (
             <Pause className="w-6 h-6 text-yellow-400 animate-pulse" />
@@ -93,7 +106,7 @@ const Hero: React.FC = () => {
           </motion.div>
         )}
 
-        <div className="flex items-center gap-2">
+        <div className="hidden sm:flex items-center gap-2">
           <Volume2 className="w-5 h-5 text-white" />
           <input
             type="range"
@@ -105,10 +118,7 @@ const Hero: React.FC = () => {
             className="w-24 accent-yellow-400"
           />
         </div>
-
         <audio ref={audioRef} src="/assets/audio/musicBotlyst.mp3" preload="auto" />
-
-
       </div>
     </section>
   );
